@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import axios from "axios";
+
 import "./Contact.css";
 
 function Contact() {
@@ -38,7 +38,7 @@ function Contact() {
 
       <div className="container">
         <div className="contact-content">
-          {/* Contact Information */}
+         
           <div className="contact-info">
             <h2>Contact Information</h2>
             
@@ -49,8 +49,8 @@ function Contact() {
 
             <div className="info-section">
               <h3>Phone Numbers</h3>
-              <p>📞 9566714471</p>
-              <p>📞 6383283321</p>
+              <p> 9566714471</p>
+              <p> 6383283321</p>
             </div>
 
             <div className="info-section">
@@ -128,7 +128,7 @@ function Contact() {
           </div>
         </div>
 
-        {/* CTA Section */}
+       
         <div className="contact-cta">
           <h2>Ready to Build Your Dream?</h2>
           <p>Let's discuss your next project and turn your vision into reality.</p>

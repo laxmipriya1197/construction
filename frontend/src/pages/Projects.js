@@ -126,7 +126,7 @@ function Projects() {
         <>
           <div className="panel-overlay" onClick={handleClosePanel}></div>
           <div className="details-panel">
-            <button className="close-btn" onClick={handleClosePanel}>❌</button>
+            <button className="close-btn" onClick={handleClosePanel}></button>
             <div className="panel-content">
               
               {selectedProject.image && (

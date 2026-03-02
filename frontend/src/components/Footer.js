@@ -18,9 +18,9 @@ function Footer() {
         </div>
         <div className="footer-section">
           <h4>Contact Info</h4>
-          <p>📞 9566714471</p>
-          <p>📞 6383283321</p>
-          <p>✉️ vishnubuilderr@gmail.com</p>
+          <p> 9566714471</p>
+          <p> 6383283321</p>
+          <p>vishnubuilderr@gmail.com</p>
         </div>
         <div className="footer-section">
           <h4>Office Address</h4>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AdminDashboard.css";
@@ -16,15 +16,7 @@ function AdminDashboard() {
   const [editingItem, setEditingItem] = useState(null);
   const [formData, setFormData] = useState({});
 
-  useEffect(() => {
-    if (!isAdmin) {
-      navigate("/admin-login");
-      return;
-    }
-    fetchData();
-  }, [isAdmin, navigate, activeTab]);
-
-  const fetchData = () => {
+  const fetchData = useCallback(() => {
     if (activeTab === "projects") {
       axios.get("http://localhost:5000/projects")
         .then(res => setProjects(res.data))
@@ -42,7 +34,15 @@ function AdminDashboard() {
         .then(res => setUsers(res.data))
         .catch(err => console.error(err));
     }
-  };
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (!isAdmin) {
+      navigate("/admin-login");
+      return;
+    }
+    fetchData();
+  }, [isAdmin, navigate, fetchData]);
 
   const handleDelete = async (id, type) => {
     if (!window.confirm("Are you sure you want to delete this item?")) return;
@@ -136,7 +136,7 @@ function AdminDashboard() {
           </button>
         </div>
 
-        {/* Projects Tab */}
+       
         {activeTab === "projects" && (
           <div className="admin-section">
             <div className="section-header">
@@ -231,7 +231,7 @@ function AdminDashboard() {
           </div>
         )}
 
-        {/* Services Tab */}
+        
         {activeTab === "services" && (
           <div className="admin-section">
             <div className="section-header">
@@ -286,7 +286,7 @@ function AdminDashboard() {
           </div>
         )}
 
-        {/* Requirements Tab */}
+        
         {activeTab === "requirements" && (
           <div className="admin-section">
             <h2>Manage Requirements</h2>
