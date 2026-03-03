@@ -15,11 +15,11 @@ function Login() {
 
     try {
       if (isLogin) {
-        const res = await axios.post("https://construction-dge4.onrender.com/users/login", data);
+        const res = await axios.post("https://construction-dge4.onrender.com/api/users/login", data);
         localStorage.setItem("user", JSON.stringify(res.data.user));
         navigate("/user-dashboard");
       } else {
-        await axios.post("https://construction-dge4.onrender.com/users/register", data);
+        await axios.post("https://construction-dge4.onrender.com/api/users/register", data);
         alert("Registration successful! Please login.");
         setIsLogin(true);
         setData({});
