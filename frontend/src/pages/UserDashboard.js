@@ -14,7 +14,7 @@ function UserDashboard() {
       return;
     }
 
-    axios.get(`http://localhost:5000/requirements/user/${user._id}`)
+    axios.get(`https://construction-dge4.onrender.com/requirements/user/${user._id}`)
       .then(res => setRequirements(res.data))
       .catch(err => console.error(err));
   }, [user, navigate]);

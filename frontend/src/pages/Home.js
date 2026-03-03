@@ -8,11 +8,11 @@ function Home() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/services")
+    axios.get("https://construction-dge4.onrender.com/services")
       .then(res => setServices(res.data.slice(0, 3)))
       .catch(err => console.error(err));
     
-    axios.get("http://localhost:5000/projects")
+    axios.get("https://construction-dge4.onrender.com/projects")
       .then(res => setProjects(res.data.slice(0, 3)))
       .catch(err => console.error(err));
   }, []);

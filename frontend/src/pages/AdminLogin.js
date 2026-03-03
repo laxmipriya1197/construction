@@ -10,7 +10,7 @@ function AdminLogin() {
   const loginAdmin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/admin/login", data);
+      const res = await axios.post("https://construction-dge4.onrender.com/admin/login", data);
       localStorage.setItem("admin", "true");
       if (res.data.admin) {
         localStorage.setItem("adminData", JSON.stringify(res.data.admin));

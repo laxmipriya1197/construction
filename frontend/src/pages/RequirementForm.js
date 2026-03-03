@@ -36,7 +36,7 @@ function RequirementForm() {
     }
 
     try {
-      await axios.post("http://localhost:5000/requirements", {
+      await axios.post("https://construction-dge4.onrender.com/requirements", {
         ...form,
         userId: user._id,
         familyCount: parseInt(form.familyCount) || 0,

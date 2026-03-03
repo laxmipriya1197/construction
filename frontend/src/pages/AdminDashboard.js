@@ -18,19 +18,19 @@ function AdminDashboard() {
 
   const fetchData = useCallback(() => {
     if (activeTab === "projects") {
-      axios.get("http://localhost:5000/projects")
+      axios.get("https://construction-dge4.onrender.com/projects")
         .then(res => setProjects(res.data))
         .catch(err => console.error(err));
     } else if (activeTab === "services") {
-      axios.get("http://localhost:5000/services")
+      axios.get("https://construction-dge4.onrender.com/services")
         .then(res => setServices(res.data))
         .catch(err => console.error(err));
     } else if (activeTab === "requirements") {
-      axios.get("http://localhost:5000/requirements")
+      axios.get("https://construction-dge4.onrender.com/requirements")
         .then(res => setRequirements(res.data))
         .catch(err => console.error(err));
     } else if (activeTab === "users") {
-      axios.get("http://localhost:5000/users")
+      axios.get("https://construction-dge4.onrender.com/users")
         .then(res => setUsers(res.data))
         .catch(err => console.error(err));
     }
@@ -48,7 +48,7 @@ function AdminDashboard() {
     if (!window.confirm("Are you sure you want to delete this item?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/${type}/${id}`);
+      await axios.delete(`https://construction-dge4.onrender.com/${type}/${id}`);
       alert("Deleted successfully");
       fetchData();
     } catch (error) {
@@ -58,7 +58,7 @@ function AdminDashboard() {
 
   const handleConfirm = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/requirements/${id}`, { status: "confirmed" });
+      await axios.put(`https://construction-dge4.onrender.com/requirements/${id}`, { status: "confirmed" });
       alert("Requirement confirmed successfully");
       fetchData();
     } catch (error) {
@@ -75,10 +75,10 @@ function AdminDashboard() {
     try {
       const { type, _id } = editingItem;
       if (_id) {
-        await axios.put(`http://localhost:5000/${type}/${_id}`, formData);
+        await axios.put(`https://construction-dge4.onrender.com/${type}/${_id}`, formData);
         alert("Updated successfully");
       } else {
-        await axios.post(`http://localhost:5000/${type}`, formData);
+        await axios.post(`https://construction-dge4.onrender.com/${type}`, formData);
         alert("Added successfully");
       }
       setEditingItem(null);

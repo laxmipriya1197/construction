@@ -7,7 +7,7 @@ function Services() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/services")
+    axios.get("https://construction-dge4.onrender.com/services")
       .then(res => setServices(res.data))
       .catch(err => console.error(err));
   }, []);

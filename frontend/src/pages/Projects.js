@@ -10,7 +10,7 @@ function Projects() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/projects")
+    axios.get("https://construction-dge4.onrender.com/projects")
       .then(res => setProjects(res.data))
       .catch(err => console.error(err));
   }, []);
