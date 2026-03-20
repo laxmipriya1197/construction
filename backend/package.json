@@ -5,18 +5,18 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js",
+    "start": "node app.js",
     "create-admin": "node scripts/createAdmin.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
-    "mongoose": "^9.0.2",
+    "mongoose": "^9.2.4",
     "nodemailer": "^6.9.8",
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.14"
   }
 }
